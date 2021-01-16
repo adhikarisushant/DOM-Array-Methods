@@ -40,6 +40,16 @@ async function getRandomUser() {
             updateDOM();
         }
 
+        // FIlter only millionaires
+        function showMillionaires() {
+            data = data.filter((user) => {
+                return(
+                    user.money > 1000000
+                );
+            })
+            updateDOM();
+        }
+
 // Add new obj to data arr
 function addData(obj) {
     data.push(obj);
@@ -69,3 +79,4 @@ function formatMoney(number) {
 addUserBtn.addEventListener('click', getRandomUser);
 doubleBtn.addEventListener('click', doubleMoney);
 sortBtn.addEventListener('click', sortByRichest);
+showMillionairesBtn.addEventListener('click', showMillionaires)
